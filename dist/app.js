@@ -26,7 +26,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var boot
   \*******************************/
 /***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
 
-eval("var jquery = __webpack_require__(/*! jquery */ \"./node_modules/jquery/dist/jquery.js\");\n\nwindow.$ = jquery;\nconsole.log('otra pagina');\n$(document).ready(function () {\n  $(\"p\").click(function () {\n    $(this).hide();\n  }); //$('body').css({'background-color': 'beige'});\n});\n\n//# sourceURL=webpack://demo/./src/js/pages/page1.js?");
+eval("var jquery = __webpack_require__(/*! jquery */ \"./node_modules/jquery/dist/jquery.js\");\n\nwindow.$ = jquery;\nconsole.log('otra pagina');\nconsole.log('Página demo');\n$(document).ready(function () {\n  $(\"p\").click(function () {\n    $(this).hide();\n  }); //$('body').css({'background-color': 'beige'});\n});\n\n//# sourceURL=webpack://demo/./src/js/pages/page1.js?");
 
 /***/ }),
 
