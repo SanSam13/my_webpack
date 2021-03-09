@@ -1,0 +1,16 @@
+@import "~bootstrap/scss/bootstrap";
+
+//Estilos de globales
+@import './site/colors.scss';
+@import './site/fonts.scss';
+@import './site/mixins.scss';
+@import './site/globals.scss';
+
+
+//@import './plugins/plugins.scss';
+
+@import './partials/header.scss';
+@import './partials/footer.scss';
+//Estilos de Páginas
+@import './pages/home.scss';
+

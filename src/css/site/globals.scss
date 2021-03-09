@@ -1,0 +1,499 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Panton', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    color: $grayText;
+    position: relative;
+  
+    &.mobile-fixed {
+      @include mq(mobile, max) {
+        height: 100vh;
+        overflow: hidden;
+      }
+    }
+  
+    .container {
+      max-width: 1000px;
+      margin: auto;
+    }
+  
+    .only-mobile {
+      display: none;
+  
+      @include mq(mobile, max) {
+        display: block;
+      }
+    }
+  
+    .only-desktop {
+      display: block;
+  
+      @include mq(mobile, max) {
+        display: none;
+      }
+    }
+  
+    #layout-content {
+      padding-top: 110px;
+      //overflow: hidden;
+    }
+  
+    h1,
+    h2,
+    h3,
+    h4,
+    h5 {
+      font-family: 'Panton', sans-serif;
+      color: $black;
+      font-weight: 600;
+    }
+  
+    a {
+      color: #707070;
+      transition: color ease 1s;
+  
+      &:hover,
+      :visited {
+        color: #e64783;
+      }
+    }
+  
+    .btn-pink {
+      @include pinkButtonStyles(auto, 8px 40px);
+    }
+  
+    a {
+      &.with-icon {
+        padding: 8px 0px;
+        width: 180px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+  
+        &.open {
+          background-color: $border;
+          color: $grayText;
+        }
+  
+        img {
+          display: block;
+          width: 18px;
+          margin-left: 10px;
+        }
+      }
+    }
+  
+    .button,
+    button,
+    input[type="submit"],
+    input[type="reset"],
+    input[type="button"] {
+      border: none;
+      border-radius: none;
+      color: #444;
+      display: inline-block;
+      font-weight: bold;
+      font-family: 'Panton', sans-serif;
+      font-size: 13px;
+      font-size: 1.3rem;
+      text-decoration: none;
+      cursor: pointer;
+      line-height: normal;
+      padding: .8rem 1rem;
+      background: #ffffff;
+      ;
+      text-shadow: none;
+    }
+  
+    .button:hover,
+    button:hover,
+    input[type="submit"]:hover,
+    input[type="reset"]:hover,
+    input[type="button"]:hover {
+      color: #222;
+      border: none;
+      background: none;
+    }
+  
+    .button:active,
+    button:active,
+    input[type="submit"]:active,
+    input[type="reset"]:active,
+    input[type="button"]:active {
+      border: none;
+      background: none;
+    }
+  
+    .form-group,
+    label,
+    button,
+    input,
+    select,
+    textarea {
+      outline: 0 !important;
+  
+      &:hover,
+      &:focus,
+      &:active {
+        outline: 0 !important;
+      }
+    }
+  
+    button,
+    input {
+      appearance: none;
+      -webkit-appearance: none;
+    }
+  
+    label {
+      color: $grayText;
+      font-size: 16px;
+      font-weight: 400;
+    }
+  
+    input[type="text"],
+    input[type="password"],
+    input[type="color"],
+    input[type="email"],
+    input[type="range"],
+    input[type="search"],
+    input[type="url"],
+    input[type="tel"],
+    input[type="date"],
+    input[type="datetime"],
+    input[type="datetime-local"],
+    input[type="month"],
+    input[type="week"],
+    input[type="time"],
+    input[type="number"],
+    textarea {
+      background: $white;
+      border: 1px solid #75777b;
+      padding: 10px 5px;
+      margin: 0;
+      outline: none;
+      @include border-radius(18px);
+      font-family: 'Panthon', sans-serif;
+      font-size: 14px;
+      line-height: 14px;
+      font-weight: 400;
+      color: $grayText;
+      width: 100%;
+      max-width: 100%;
+      display: block;
+  
+      &:hover {
+        box-shadow: none;
+      }
+  
+      &:active {
+        box-shadow: none;
+      }
+  
+      &:focus {
+        box-shadow: none;
+      }
+  
+      &::placeholder {
+        /* Chrome, Firefox, Opera, Safari 10.1+ */
+        font-size: 16px;
+      }
+  
+      &:-ms-input-placeholder {
+        /* Internet Explorer 10-11 */
+        font-size: 16px;
+      }
+  
+      &::-ms-input-placeholder {
+        /* Microsoft Edge */
+        font-size: 16px;
+      }
+    }
+  
+    .opinions {
+      margin: 0 0 20px 0;
+  
+      p {
+        display: inline-block;
+        vertical-align: middle;
+        margin: 0;
+        font-size: 16px;
+        line-height: 1;
+        font-weight: 300;
+      }
+  
+      .points {
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: 5px;
+  
+        span {
+          display: inline-block;
+          @include border-radius(50%);
+          border: 1px solid $pink;
+          width: 16px;
+          height: 16px;
+          position: relative;
+  
+          &.active {
+            &::after {
+              display: block;
+              content: "";
+              width: 10px;
+              height: 10px;
+              @include border-radius(50%);
+              background-color: $pink;
+              border: 1px solid red;
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+            }
+          }
+        }
+      }
+  
+      @include mq(mobile, max) {
+        p {
+          font-size: 12px;
+        }
+  
+        .points {
+          margin-right: 3px;
+  
+          span {
+            width: 12px;
+            height: 12px;
+  
+            &.active {
+              &::after {
+                width: 8px;
+                height: 8px;
+              }
+            }
+          }
+        }
+      }
+  
+      .cdsComponent.cdsLocName {
+        display: none;
+      }
+  
+      .cdsComponent.logo {
+        display: none;
+      }
+  
+      .cdsComponent.cdsRating {
+        display: flex;
+        align-items: center;
+      }
+  
+      .ui_bubble_rating {
+        margin-right: 10px;
+      }
+  
+      .cdsROW.narrow.border {
+        padding: 0;
+      }
+  
+      .cdsROW.border {
+        border: none;
+      }
+  
+      .brand_refresh_bubble_ratings .ui_bubble_rating::after {
+        color: #e64783;
+      }
+  
+      .cdsROW.cdsRating.ui_bubble_rating {
+        font-size: 15px;
+      }
+  
+      .cdsROW .cdsRating span {
+        color: #707070;
+        font-size: 14px;
+        font-family: 'Panthon', sans-serif;
+      }
+  
+      &.opinions-home {
+        .cdsROW.narrow {
+          width: 100%;
+        }
+  
+        .cdsComponent.cdsRating {
+          justify-content: flex-end;
+        }
+      }
+    }
+  
+    .amenidades-container {
+      display: flex;
+      flex-wrap: wrap;
+  
+      .amenidad {
+        width: 50%;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 10px;
+  
+        div {
+          width: 40px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+  
+          img {
+            display: block;
+            width: auto;
+            height: 16px;
+          }
+        }
+  
+        span {
+          display: block;
+          width: calc(100% - 40px);
+          font-weight: 300;
+          font-size: 12px;
+          line-height: 1.2;
+        }
+      }
+  
+      @include mq(mobile, max) {
+        .amenidad {
+          div {
+            width: 35px;
+  
+            img {
+              height: 12px;
+            }
+          }
+  
+          span {
+            width: calc(100% - 35px);
+            font-size: 10px;
+          }
+        }
+      }
+    }
+  
+    .checkbox-container,
+    .radio-container {
+      display: flex;
+      text-align: left;
+      margin: 20px auto;
+      position: relative;
+      padding-left: 22px;
+  
+      input {
+        display: none;
+      }
+  
+      &:before {
+        content: '';
+        position: absolute;
+        border: 1px solid $border;
+        @include border-radius(50%);
+        width: 15px;
+        height: 15px;
+        top: 5px;
+        left: 0px;
+      }
+  
+      &.checked {
+        &:before {
+          background-color: $pink;
+        }
+  
+        &:after {
+          content: '';
+          position: absolute;
+          border: 2px solid white;
+          @include border-radius(50%);
+          width: 13px;
+          height: 13px;
+          top: 6px;
+          left: 1px;
+        }
+      }
+  
+      a {
+        margin-left: 5px;
+        color: $grayText;
+        text-decoration: none;
+      }
+  
+      @include mq(mobile, max) {
+        font-size: .9em;
+        padding-left: 25px;
+      }
+    }
+  
+    .radio-button {
+      /* The container */
+      .container-radio {
+        display: block;
+        position: relative;
+        padding-left: 35px;
+        cursor: pointer;
+        line-height: 1;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+  
+      /* Hide the browser's default radio button */
+      .container-radio input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+      }
+  
+      /* Create a custom radio button */
+      .checkmark {
+        position: absolute;
+        top: 0;
+        left: 10px;
+        height: 15px;
+        width: 15px;
+        background-color: $white;
+        border-radius: 50%;
+        border: 1px solid $border;
+      }
+  
+      /* On mouse-over, add a grey background color */
+      // .container-radio:hover input~.checkmark {
+      //   background-color: #ccc;
+      // }
+  
+      /* When the radio button is checked, add a blue background */
+      .container-radio input:checked~.checkmark {
+        //background-color: $pink;
+        background-color: white;
+        border: 1px solid $border;
+      }
+  
+      /* Create the indicator (the dot/circle - hidden when not checked) */
+      .checkmark:after {
+        content: "";
+        position: absolute;
+        display: none;
+      }
+  
+      /* Show the indicator (dot/circle) when checked */
+      .container-radio input:checked~.checkmark:after {
+        display: block;
+      }
+  
+      /* Style the indicator (dot/circle) */
+      .container-radio .checkmark:after {
+        top: 2px;
+        left: 2px;
+        width: 9px;
+        height: 9px;
+        border-radius: 50%;
+        background: $pink;
+      }
+    }
+}

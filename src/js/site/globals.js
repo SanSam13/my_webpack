@@ -1,0 +1,1 @@
+console.log('Aqui van las funciones globales');
